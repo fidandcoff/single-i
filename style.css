@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #30214c;
+    -webkit-background-size: 150px;
+    background-size: 150px;
+}
+
+#container {
+    background: black;
+}
+
+#video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#video {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+}
+
+.youtube{
+    background: #f00;
+}
+
+.spotify{
+    background: #1ed760;
+}
+
+.amazon{
+    background: #fa7714;
+}
+
+.apple{
+    background: whitesmoke;
+}
+
+.deezer{
+    background: deepskyblue;
+}
+
+.google{
+    background: pink;
+}
+
+.google > img {
+   max-width: 120px;
+}
+
+.napster{
+   background: white;
+}
+
+.ligne{
+    position: relative;
+    height: 70px;
+}
+
+.logo {
+    max-width: 100px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto auto auto 20px;
+}
+
+.triangle {
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
+    float: right;
+    height: 73px;
+    width: 60px;
+    min-height: 100%;
+}
+
+button {
+    background: black;
+    padding: 10px 15px 10px 15px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+a {
+    margin-right: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+
+@media screen and (max-width: 600px){
+    body{
+        margin: 0;
+    }
+    #container{
+        max-width: 100%;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 600px){
+    #container{
+        width: 100%;
+        max-width: 700px;
+        margin: auto;
+    }
+}

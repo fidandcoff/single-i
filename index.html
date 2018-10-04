@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>FID</title>
+</head>
+<body>
+    <div id="container">
+        <div id="video">
+            <iframe id="iframe" allowfullscreen width="200" height="150" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script>
+        let hash = location.hash.substring(1)
+
+         fetch("data.json")
+         .then(res => res.json())
+         .then(json => {
+             let container = document.getElementById("container")
+             document.getElementById("iframe").src = "https://www.youtube.com/embed/"+json["video"]
+             if(hash.length !== 0){ 
+	     let o = json[hash]
+             if (o) Object.keys(o).forEach((key, i, a) => {
+
+                 let div = document.createElement("div")
+
+                 let img = document.createElement("img")
+                 img.className = "logo"
+                 div.appendChild(img)
+
+                 let anchor = document.createElement("a")
+                 anchor.href = o[key]
+                 div.appendChild(anchor)
+
+                 let button = document.createElement("button")
+                 anchor.appendChild(button)
+
+                 switch (key) {
+                     case "youtube":
+                         div.className = "ligne youtube"
+                         img.src = "youtube.png"
+                         button.innerText = "Regarder"
+                         container.appendChild(div)
+                         break;
+                     case "spotify":
+                         div.className = "ligne spotify"
+                         img.src = "spotify.png"
+                         button.innerText = "Écouter"
+                         container.appendChild(div)
+                         break;
+                     case "soundcloud":
+                         div.className = "ligne soundcloud"
+                         img.src = "soundcloud.png"
+                         button.innerText = "Écouter"
+                         container.appendChild(div)
+                         break;
+                     case "apple":
+                         div.className = "ligne apple"
+                         img.src = "apple.svg"
+                         button.innerText = "Acheter"
+                         container.appendChild(div)
+                         break;
+                     case "deezer":
+                         div.className = "ligne deezer"
+                         img.src = "deezer.png"
+                         button.innerText = "Écouter"
+                         container.appendChild(div)
+                         break;
+                     case "google":
+                         div.className = "ligne google"
+                         img.src = "google.png"
+                         button.innerText = "Télécharger"
+                         container.appendChild(div)
+                         break;
+                     case "napster":
+                         div.className = "ligne napster"
+                         img.src = "napster.png"
+                         button.innerText = "Écouter"
+                         container.appendChild(div)
+                         break;
+                     case "amazon":
+                         div.className = "ligne amazon"
+                         img.src = "amazon.png"
+                         button.innerText = "Écouter"
+                         container.appendChild(div)
+                         break;
+                 }
+             })
+}
+         })
+    </script>
+</body>
+</html>
